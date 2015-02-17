@@ -123,7 +123,7 @@ class DataClass(object):
         with open(filename, "rb") as csvfile:
             reader = csv.reader(csvfile, delimiter=",")
             for row in reader:
-                if row[8] != "{}":
+                if len(row) > 7 and row[8] != "{}":
                     self.data.append(self.parse_list_from_string(row[8]))
         
 
